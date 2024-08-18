@@ -5,6 +5,9 @@ body {
   }
   
   .App {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
     padding: 20px;
   }
@@ -24,9 +27,16 @@ body {
   }
   
   .matrix-size {
+    display: flex;
+    gap: 20px;
+    align-items: center;
     margin: 20px 0;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
+  }
+
+  span{
+    color: aqua;
   }
   
   .matrix {

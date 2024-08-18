@@ -37,9 +37,10 @@ function App() {
 
   return (
     <div className="App">
-      <button className="add-button" onClick={addRowAndColumn}>Increase Grid Size</button>
+      <h2>Matrix Star Patterns Visualization</h2>
       <div className="matrix-size">
-        Matrix Size: {matrix.length} x {matrix[0].length}
+        <button className="add-button" onClick={addRowAndColumn}>Increase Grid Size</button>
+        <span>Matrix Size: {matrix.length} x {matrix[0].length}</span>
       </div>
       <div className="matrix">
         {matrix.map((row, rowIndex) => (

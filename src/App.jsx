@@ -1,24 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faFillDrip, faStar } from '@fortawesome/free-solid-svg-icons';
+import './App.css';
 
 function App() {
   const [matrix, setMatrix] = useState([[null]]);
 
-  const addRow = () => {
+  const addRowAndColumn = () => {
     setMatrix(prevMatrix => {
       const newSize = prevMatrix.length + 1;
       const newRow = new Array(newSize).fill(null);
-
       return [...prevMatrix.map(row => [...row, null]), newRow];
-    });
-  };
-
-  const addColumn = () => {
-    setMatrix(prevMatrix => {
-      const newSize = prevMatrix.length + 1;
-      const newColumn = new Array(newSize).fill(null);
-
-      return [...prevMatrix.map(row => [...row, null]), newColumn];
     });
   };
 
@@ -44,22 +36,23 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <div className="controlls">
-        <button onClick={addRow}> Add Row</button>
-        <button onClick={addColumn}> Add Column</button>
-        <span> Matrix Size : {matrix.length} X {matrix[0].length}</span>
+    <div className="App">
+      <button className="add-button" onClick={addRowAndColumn}>Increase Grid Size</button>
+      <div className="matrix-size">
+        Matrix Size: {matrix.length} x {matrix[0].length}
       </div>
-      <div className='matrix'>
+      <div className="matrix">
         {matrix.map((row, rowIndex) => (
-          <div key={rowIndex} className='row'>
+          <div key={rowIndex} className="row">
             {row.map((cell, colIndex) => (
-              <div key={colIndex} className='cell'>
-                {cell}
-                <div className='cell-options'>
-                  <button onClick={() => deleteCell(rowIndex, colIndex)}> Delete</button>
+              <div key={colIndex} className="cell">
+                {cell ? <FontAwesomeIcon icon={faStar} /> : null}
+                <div className="cell-controls">
+                  <button onClick={() => deleteCell(rowIndex, colIndex)}>
+                    <FontAwesomeIcon icon={faTrash} />
+                  </button>
                   <button onClick={() => toggleFill(rowIndex, colIndex)}>
-                    {cell ? 'Empty' : "Fill"}
+                    <FontAwesomeIcon icon={faFillDrip} />
                   </button>
                 </div>
               </div>
@@ -68,7 +61,7 @@ function App() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,58 @@
+*{
+    background-color: black;
+    color: white;
+}
+.App{
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.matrix{
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.row{
+    display: flex;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cell-options {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255, 0.8);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cell:hover .cell-options {
+    display: flex;
+}
+
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: 2px dotted white;
+    border-radius: 5px
+}
+
+span {
+    color: aquamarine;
+}

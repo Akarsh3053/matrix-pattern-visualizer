@@ -1,5 +1,5 @@
 <div align="center"><h1>Matrix Solution Visualization for Star patterns</h1></div>
-A simple react web app for visually representing the visual layout of the matrix for different star pattern solutions. It provides a visual representation of 
+A simple react web app for visually representing the visual layout of the matrix for different star pattern problem solutions. It provides a visual representation of 
 a square matrix where each cell can be toggled to be filled with a star, deleting a cell removes its entire column and row to keep the matrix balanced.
 
 # Tech Used
